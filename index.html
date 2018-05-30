@@ -21,10 +21,13 @@
       el: '#app',
       data: {
         msg: 'Hello MVVM',
-        value: 123
+        value: '这里测试双向数据绑定'
+      },
+      created() {
+        console.log('created!')
       },
       mounted() {
-        this.value = '这里测试双向数据绑定'
+        console.log('mounted!')
       }
     })
   </script>
