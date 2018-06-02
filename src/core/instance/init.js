@@ -5,7 +5,7 @@ const LIFECYCLE_HOOKS = [
 ]
 
 export default function initOptions(vm) {
-  let data = vm._data = vm.$options.data
+  vm._data = vm.$options.data
   observer(vm._data)
   LIFECYCLE_HOOKS.forEach(hook => {
     vm.$options[hook] = vm.$options[hook] || function () {}

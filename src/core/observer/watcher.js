@@ -4,9 +4,9 @@ import {
 } from './dep'
 
 export default class Watcher {
-  constructor(vm, expression, cb) {
+  constructor(vm, expression, callBack) {
     this.vm = vm
-    this.cb = cb
+    this.callBack = callBack
     this.expression = expression
     this.value = this.getVal()
   }
@@ -27,6 +27,6 @@ export default class Watcher {
     this.expression.split('.').forEach(key => {
       val = val[key]
     })
-    this.cb.call(this.vm, val, this.value)
+    this.callBack.call(this.vm, val)
   }
 }

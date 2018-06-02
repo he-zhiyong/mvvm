@@ -25,25 +25,33 @@ export default class compiler {
         let nodeAttr = node.attributes
         Array.from(nodeAttr).forEach(attr => {
           let name = attr.name
-          let exp = attr.value
-          if (name.includes('v-')) {
-            node.value = vm[exp]
-          }
-          vm.$watch(exp, newVal => {
-            node.value = newVal
-          })
-          node.addEventListener('input', e => {
-            let newVal = e.target.value
+          //判断是否是v-model,然后做绑定数据处理
+          if (name === 'v-model') {
+            let exp = attr.value
             let arr = exp.split('.')
-            let val = vm
+            //input初始化赋值
+            let value = vm
             arr.forEach((key, index) => {
-              if (index === arr.length - 1) {
-                val[key] = newVal
-                return
-              }
-              val = val[key]
+              value = value[key]
             })
-          })
+            node.value = value
+            //添加监听数据值变化
+            vm.$watch(exp, newVal => {
+              node.value = newVal
+            })
+            //添加事件监听input值变化
+            node.addEventListener('input', e => {
+              let newVal = e.target.value
+              let val = vm
+              arr.forEach((key, index) => {
+                if (index === arr.length - 1) {
+                  val[key] = newVal
+                  return
+                }
+                val = val[key]
+              })
+            })
+          }
         })
       }
 

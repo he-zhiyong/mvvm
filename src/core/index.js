@@ -7,11 +7,11 @@ import {
 } from './instance/lifecycle'
 
 export default class MVVM {
-  constructor(options) {
+  constructor(options = {}) {
     let vm = this
     vm.$options = options
-    vm.$watch = function (key, cb) {
-      new Watcher(vm, key, cb)
+    vm.$watch = function (key, callBack) {
+      new Watcher(vm, key, callBack)
     }
     initOptions(vm)
     for (let key in vm._data) {
@@ -21,9 +21,4 @@ export default class MVVM {
     new Compiler(vm.$options.el, vm)
     callHook(vm, 'mounted')
   }
-}
-
-function observer(value) {
-  if (!value || typeof value !== 'object') return
-  return new Observer(value)
 }

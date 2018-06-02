@@ -2,7 +2,7 @@ export default class Dep {
   constructor() {
     this.sub = []
   }
-  appDepend() {
+  addDepend() {
     Dep.target.addDep(this)
   }
   addSub(sub) {
