@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel example/index.html --no-cache --open",
-    "build": "parcel build src/index.js -o mvvm --no-cache"
+    "build": "parcel build src/index.js -o mvvm --no-cache",
+    "example": "parcel build example/index.html -d dist/example --public-url ./ --no-cache"
   },
   "keywords": ["MVVM"],
   "author": "hezhiyong",
