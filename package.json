@@ -7,7 +7,7 @@
     "start": "parcel --no-cache --open",
     "build": "parcel build src/index.js -o mvvm --no-cache"
   },
-  "keywords": [],
+  "keywords": ["MVVM"],
   "author": "hezhiyong",
   "license": "MIT"
 }
