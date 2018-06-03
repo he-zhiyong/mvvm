@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({8:[function(require,module,exports) {
+})({12:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -231,7 +231,7 @@ function observer(value) {
   if (!value || (typeof value === 'undefined' ? 'undefined' : _typeof(value)) !== 'object') return;
   return new Observer(value);
 }
-},{"./dep":18}],14:[function(require,module,exports) {
+},{"./dep":18}],8:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -394,7 +394,7 @@ var Watcher = function () {
 }();
 
 exports.default = Watcher;
-},{"./dep":18}],12:[function(require,module,exports) {
+},{"./dep":18}],14:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -454,7 +454,7 @@ var MVVM = function MVVM() {
 };
 
 exports.default = MVVM;
-},{"./instance/proxy":8,"./instance/init":14,"./compile":16,"./observer/watcher":10,"./instance/lifecycle":12}],4:[function(require,module,exports) {
+},{"./instance/proxy":12,"./instance/init":8,"./compile":16,"./observer/watcher":10,"./instance/lifecycle":14}],4:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -467,12 +467,10 @@ var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-if (window) {
-  window.MVVM = _index2.default;
-}
+if (window) window.MVVM = _index2.default;
 
 exports.default = _index2.default;
-},{"./core/index":6}],24:[function(require,module,exports) {
+},{"./core/index":6}],22:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -492,9 +490,9 @@ module.bundle.Module = Module;
 
 var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
-  var hostname = undefined || location.hostname;
+  var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52053' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54622' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -595,5 +593,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[24,4])
+},{}]},{},[22,4])
 //# sourceMappingURL=/dist/e09901cfe869c994615ad37454d74871.map

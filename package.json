@@ -4,7 +4,7 @@
   "description": "A MVVM Demo.",
   "main": "index.js",
   "scripts": {
-    "start": "parcel --no-cache --open",
+    "start": "parcel example/index.html --no-cache --open",
     "build": "parcel build src/index.js -o mvvm --no-cache"
   },
   "keywords": ["MVVM"],
