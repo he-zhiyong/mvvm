@@ -7,7 +7,7 @@ export default class compiler {
   replace(frag, vm) {
     Array.from(frag.childNodes).forEach(node => {
       let txt = node.textContent
-      let reg = /\{\{(.*?)\}\}/ // 正则匹配{{}}
+      let reg = /\{\{(.*?)\}\}/g // 正则匹配{{}}
 
       if (node.nodeType === 3 && reg.test(txt)) {
         let arr = RegExp.$1.split('.')
