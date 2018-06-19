@@ -1,4 +1,4 @@
-import observer from '../observer'
+import observer from '../observer/index.js'
 const LIFECYCLE_HOOKS = [
   'created',
   'mounted'

@@ -1,4 +1,4 @@
-import Dep from './dep'
+import Dep from './dep.js'
 
 class Observer {
   constructor(value) {

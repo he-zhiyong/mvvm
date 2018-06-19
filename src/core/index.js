@@ -1,10 +1,10 @@
-import proxy from './instance/proxy'
-import initOptions from './instance/init'
-import Compiler from './compile'
-import Watcher from './observer/watcher'
+import proxy from './instance/proxy.js'
+import initOptions from './instance/init.js'
+import Compiler from './compile/index.js'
+import Watcher from './observer/watcher.js'
 import {
   callHook
-} from './instance/lifecycle'
+} from './instance/lifecycle.js'
 
 export default class MVVM {
   constructor(options = {}) {

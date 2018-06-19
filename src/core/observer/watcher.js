@@ -1,7 +1,7 @@
 import {
   popTarget,
   pushTarget
-} from './dep'
+} from './dep.js'
 
 export default class Watcher {
   constructor(vm, expression, callBack) {

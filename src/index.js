@@ -1,4 +1,4 @@
-import MVVM from './core/index'
+import MVVM from './core/index.js'
 
 if (window) window.MVVM = MVVM
 
